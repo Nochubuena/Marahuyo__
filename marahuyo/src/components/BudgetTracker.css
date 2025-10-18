@@ -1,0 +1,417 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&display=swap');
+
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Budget Tracker Page */
+.budgettracker-page {
+  min-height: 100vh;
+  background-color: #ece2d6;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Header */
+.header {
+  background-color: #354a83;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  z-index: 10;
+}
+
+/* Logo - Two yellow hands framing a blue eye */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hand-left, .hand-right {
+  width: 2rem;
+  height: 2rem;
+  background-color: #f2c757;
+  border-radius: 50%;
+  position: relative;
+}
+
+.hand-left::before, .hand-right::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #354a83;
+  border-radius: 50%;
+}
+
+.eye {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #354a83;
+  border-radius: 50%;
+}
+
+.logo-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.logo-button:hover {
+  transform: scale(1.05);
+}
+
+.logo-button:focus {
+  outline: 2px solid #f2c757;
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+
+/* Header Icons */
+.header-icons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.icon-circle {
+  width: 2rem;
+  height: 2rem;
+  background-color: #f9dedc;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-icon {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.logout-button {
+  background: #f9dedc;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logout-button:hover {
+  transform: scale(1.1);
+  background: #f5c6c3;
+}
+
+.logout-button:focus {
+  outline: 2px solid #f2c757;
+  outline-offset: 2px;
+}
+
+.logout-button .icon {
+  width: 1.2rem;
+  height: 1.2rem;
+  color: #354a83;
+}
+
+/* Main Content */
+.budgettracker-content {
+  flex: 1;
+  position: relative;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 4rem);
+}
+
+/* Crumpled Paper Background */
+.crumpled-paper-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.crumpled-texture {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.2;
+}
+
+/* Decorative Elements */
+.decorative-elements {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  z-index: 2;
+}
+
+.group-1-17, .group-2-22, .group-3-29 {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.ellipse-1-18, .ellipse-2-19, .ellipse-3-20, .ellipse-4-21 {
+  width: 1rem;
+  height: 1rem;
+}
+
+.rectangle-14-23, .rectangle-15-24, .rectangle-17-25, .rectangle-18-26,
+.rectangle-16-27, .rectangle-12-28, .rectangle-14-30, .rectangle-15-31,
+.rectangle-17-32, .rectangle-18-33, .rectangle-16-34, .rectangle-12-35 {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Search Bar */
+.search-bar {
+  position: relative;
+  z-index: 3;
+  background-color: #f2c757;
+  border: 1px solid #000;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  align-self: center;
+  width: 100%;
+}
+
+.search-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.search-icon {
+  flex-shrink: 0;
+}
+
+.icon-42 {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.search-input {
+  flex: 1;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 4px;
+  padding: 0.75rem 1rem;
+}
+
+.search-placeholder {
+  font-family: 'Crimson Text', serif;
+  font-size: 1rem;
+  color: #666;
+}
+
+.search-actions {
+  flex-shrink: 0;
+}
+
+.icon-49 {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/* Content Cards Row */
+.content-cards-row {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  align-self: center;
+  width: 100%;
+}
+
+/* Content Card */
+.content-card {
+  background-color: #f2c757;
+  border: 1px solid #000;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.content-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.icon-51 {
+  width: 2rem;
+  height: 2rem;
+}
+
+.item-title {
+  font-family: 'Crimson Text', serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #000;
+}
+
+.item-description {
+  font-family: 'Crimson Text', serif;
+  font-size: 1rem;
+  color: #000;
+  line-height: 1.5;
+}
+
+/* Other Options Card */
+.other-options-card {
+  background-color: #354a83;
+  color: #f2c757;
+  text-align: center;
+}
+
+.other-options {
+  font-family: 'Crimson Text', serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #f2c757;
+  margin-bottom: 1.5rem;
+}
+
+.shopping-actions {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.shopping-cart {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.shopping-cart:hover {
+  transform: scale(1.1);
+}
+
+.icon-60, .icon-62 {
+  width: 3rem;
+  height: 3rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .budgettracker-content {
+    padding: 1.5rem;
+  }
+  
+  .decorative-elements {
+    top: 1rem;
+    right: 1rem;
+  }
+  
+  .content-cards-row {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-icons {
+    gap: 0.5rem;
+  }
+  
+  .icon-circle {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  
+  .header-icon {
+    width: 1rem;
+    height: 1rem;
+  }
+  
+  .budgettracker-content {
+    padding: 1rem;
+  }
+  
+  .search-bar {
+    margin-bottom: 1.5rem;
+  }
+  
+  .content-cards-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .content-card {
+    padding: 1rem;
+  }
+  
+  .item-title {
+    font-size: 1.25rem;
+  }
+  
+  .item-description {
+    font-size: 0.9rem;
+  }
+  
+  .other-options {
+    font-size: 1rem;
+  }
+  
+  .shopping-actions {
+    gap: 1rem;
+  }
+  
+  .icon-60, .icon-62 {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-content {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .search-input {
+    width: 100%;
+  }
+  
+  .card-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+  
+  .shopping-actions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
