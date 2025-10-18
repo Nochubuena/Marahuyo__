@@ -9,17 +9,14 @@ import Login from './components/Login';
 function App() {
   const [activeSection, setActiveSection] = useState('home');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [user, setUser] = useState(null);
 
   const handleLogin = (username) => {
     setIsLoggedIn(true);
-    setUser(username);
     setActiveSection('home');
   };
 
   const handleLogout = () => {
     setIsLoggedIn(false);
-    setUser(null);
     setActiveSection('home');
   };
 
