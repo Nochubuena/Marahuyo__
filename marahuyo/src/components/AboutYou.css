@@ -1,0 +1,417 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&display=swap');
+
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* About You Page */
+.aboutyou-page {
+  min-height: 100vh;
+  background-color: #ece2d6;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Header */
+.header {
+  background-color: #354a83;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  z-index: 10;
+}
+
+/* Logo - Two yellow hands framing a blue eye */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hand-left, .hand-right {
+  width: 2rem;
+  height: 2rem;
+  background-color: #f2c757;
+  border-radius: 50%;
+  position: relative;
+}
+
+.hand-left::before, .hand-right::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #354a83;
+  border-radius: 50%;
+}
+
+.eye {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #354a83;
+  border-radius: 50%;
+}
+
+.logo-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.logo-button:hover {
+  transform: scale(1.05);
+}
+
+.logo-button:focus {
+  outline: 2px solid #f2c757;
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+
+/* Header Icons */
+.header-icons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.icon-circle {
+  width: 2rem;
+  height: 2rem;
+  background-color: #f9dedc;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-icon {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.logout-button {
+  background: #f9dedc;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logout-button:hover {
+  transform: scale(1.1);
+  background: #f5c6c3;
+}
+
+.logout-button:focus {
+  outline: 2px solid #f2c757;
+  outline-offset: 2px;
+}
+
+.logout-button .icon {
+  width: 1.2rem;
+  height: 1.2rem;
+  color: #354a83;
+}
+
+/* Main Content */
+.aboutyou-content {
+  flex: 1;
+  position: relative;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 4rem);
+}
+
+/* Crumpled Paper Background */
+.crumpled-paper-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.crumpled-texture {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.2;
+}
+
+/* Decorative Elements */
+.decorative-elements {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  z-index: 2;
+}
+
+.group-1-10, .group-2-15, .group-3-22 {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.ellipse-1-11, .ellipse-2-12, .ellipse-3-13, .ellipse-4-14 {
+  width: 1rem;
+  height: 1rem;
+}
+
+.rectangle-14-16, .rectangle-15-17, .rectangle-17-18, .rectangle-18-19,
+.rectangle-16-20, .rectangle-12-21, .rectangle-14-23, .rectangle-15-24,
+.rectangle-17-25, .rectangle-18-26, .rectangle-16-27, .rectangle-12-28 {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Main Yellow Card */
+.main-card {
+  position: relative;
+  z-index: 3;
+  background-color: #f2c757;
+  border: 1px solid #000;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 800px;
+  min-height: 500px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Profile Section - Overlapping the card */
+.profile-section {
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+}
+
+.profile-ellipse {
+  width: 200px;
+  height: 200px;
+  filter: drop-shadow(3px 25px 4px rgba(0, 0, 0, 0.5));
+}
+
+.user-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.profile-icon {
+  width: 4rem;
+  height: 4rem;
+  color: #1e1e1e;
+}
+
+/* Username */
+.username {
+  font-family: 'Crimson Text', serif;
+  font-size: 4rem;
+  font-weight: normal;
+  color: #000;
+  text-align: center;
+  margin-top: 80px;
+  margin-bottom: 2rem;
+}
+
+/* Card Content */
+.card-content {
+  display: flex;
+  width: 100%;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* SKIN SUMMARY Section */
+.skin-summary-section {
+  flex: 1;
+  background-color: #cc4b51;
+  border: 1px solid #000;
+  border-radius: 8px;
+  padding: 1.5rem;
+  position: relative;
+}
+
+.skin-summary-title {
+  font-family: 'Crimson Text', serif;
+  font-size: 1.5rem;
+  font-weight: normal;
+  color: #f2c757;
+  background-color: #f2c757;
+  color: #000;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  border: 1px solid #000;
+}
+
+.skin-details {
+  margin-top: 1rem;
+}
+
+.skin-details p {
+  font-family: 'Crimson Text', serif;
+  font-size: 1.25rem;
+  font-weight: normal;
+  color: #000;
+  margin-bottom: 0.5rem;
+}
+
+/* Favorite Brands Section */
+.favorite-brands-section {
+  flex: 1;
+  background-color: #354a83;
+  border: 1px solid #000;
+  border-radius: 8px;
+  padding: 1.5rem;
+  position: relative;
+}
+
+.favorite-brands-title {
+  font-family: 'Crimson Text', serif;
+  font-size: 1.5rem;
+  font-weight: normal;
+  color: #000;
+  background-color: #f2c757;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  border: 1px solid #000;
+}
+
+.brand-placeholders {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.brand-placeholder {
+  background-color: #d9d9d9;
+  border: 1px solid #000;
+  border-radius: 4px;
+  height: 40px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .aboutyou-content {
+    padding: 1rem;
+  }
+  
+  .decorative-elements {
+    top: 1rem;
+    right: 1rem;
+  }
+  
+  .main-card {
+    max-width: 700px;
+    min-height: 450px;
+  }
+  
+  .username {
+    font-size: 3rem;
+    margin-top: 60px;
+  }
+  
+  .profile-ellipse {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .profile-icon {
+    width: 3rem;
+    height: 3rem;
+  }
+  
+  .card-content {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-icons {
+    gap: 0.5rem;
+  }
+  
+  .icon-circle {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  
+  .header-icon {
+    width: 1rem;
+    height: 1rem;
+  }
+  
+  .main-card {
+    max-width: 100%;
+    min-height: 400px;
+    padding: 1.5rem;
+  }
+  
+  .username {
+    font-size: 2.5rem;
+    margin-top: 50px;
+  }
+  
+  .profile-ellipse {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .profile-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  
+  .card-content {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .skin-summary-title,
+  .favorite-brands-title {
+    font-size: 1.25rem;
+    padding: 0.25rem 0.75rem;
+  }
+  
+  .skin-details p {
+    font-size: 1rem;
+  }
+  
+  .brand-placeholders {
+    grid-template-columns: 1fr;
+  }
+}

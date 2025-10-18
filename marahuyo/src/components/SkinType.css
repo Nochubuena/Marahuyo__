@@ -1,0 +1,360 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Skin Type Page */
+.skintype-page {
+  min-height: 100vh;
+  background-color: #ece2d6;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.header {
+  background-color: #354a83;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+}
+
+/* Logo - Two yellow hands framing a blue eye */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hand-left, .hand-right {
+  width: 2rem;
+  height: 2rem;
+  background-color: #f2c757;
+  border-radius: 50%;
+  position: relative;
+}
+
+.hand-left::before, .hand-right::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #354a83;
+  border-radius: 50%;
+}
+
+.eye {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #354a83;
+  border-radius: 50%;
+}
+
+.logo-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.logo-button:hover {
+  transform: scale(1.05);
+}
+
+.logo-button:focus {
+  outline: 2px solid #f2c757;
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+
+/* Header Icons */
+.header-icons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.icon-circle {
+  width: 2rem;
+  height: 2rem;
+  background-color: #f9dedc;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  width: 1.2rem;
+  height: 1.2rem;
+  color: #354a83;
+}
+
+.profile-icon {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.logout-button {
+  background: #f9dedc;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logout-button:hover {
+  transform: scale(1.1);
+  background: #f5c6c3;
+}
+
+.logout-button:focus {
+  outline: 2px solid #f2c757;
+  outline-offset: 2px;
+}
+
+.logout-button .icon {
+  width: 1.2rem;
+  height: 1.2rem;
+  color: #354a83;
+}
+
+/* Main Content */
+.skintype-content {
+  flex: 1;
+  padding: 2rem;
+}
+
+/* Title Section */
+.title-section {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.main-title {
+  font-family: 'Crimson Text', serif;
+  font-size: 4rem;
+  font-weight: 700;
+  color: #f2c757;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  margin-bottom: 1rem;
+  transform: rotate(-2deg);
+}
+
+.subtitle {
+  font-family: 'Crimson Text', serif;
+  font-size: 1.25rem;
+  color: #000;
+  font-weight: 400;
+}
+
+/* Content Area */
+.content-area {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+/* Left Content - Camera Section */
+.left-content {
+  flex: 1;
+  position: relative;
+  min-height: 500px;
+}
+
+.crumpled-paper-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.crumpled-texture {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.camera-frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-5deg);
+  z-index: 2;
+  background-color: #f5f5f5;
+  border: 8px solid #f2c757;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.camera-icon {
+  position: relative;
+  width: 120px;
+  height: 100px;
+}
+
+.camera-body {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 120px;
+  height: 60px;
+  background-color: #666;
+  border-radius: 8px;
+  z-index: 2;
+}
+
+.camera-top {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  width: 60px;
+  height: 15px;
+  background-color: #888;
+  border-radius: 4px;
+  z-index: 3;
+}
+
+.camera-indicator {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  width: 6px;
+  height: 6px;
+  background-color: #ff6b35;
+  border-radius: 50%;
+  z-index: 4;
+}
+
+.camera-lens {
+  position: absolute;
+  top: 35px;
+  left: 30px;
+  width: 60px;
+  height: 60px;
+  z-index: 3;
+}
+
+.lens-outer {
+  width: 60px;
+  height: 60px;
+  background-color: #ff6b35;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid #333;
+  position: relative;
+}
+
+.lens-inner {
+  width: 40px;
+  height: 40px;
+  background-color: #333;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.lens-inner::after {
+  content: '';
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.lens-dot {
+  position: absolute;
+  top: 50%;
+  right: -15px;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background-color: #ff6b35;
+  border-radius: 50%;
+  z-index: 4;
+}
+
+/* Right Content - Text Section */
+.right-content {
+  flex: 1;
+  padding: 2rem;
+}
+
+.content-text {
+  font-family: 'Crimson Text', serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.content-text p {
+  margin-bottom: 1.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .content-area {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .main-title {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .skintype-content {
+    padding: 1rem;
+  }
+  
+  .main-title {
+    font-size: 2.5rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+  }
+  
+  .camera-frame {
+    padding: 1rem;
+  }
+  
+  .camera-body {
+    width: 80px;
+    height: 60px;
+  }
+  
+  .lens-outer {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .lens-inner {
+    width: 25px;
+    height: 25px;
+  }
+}
