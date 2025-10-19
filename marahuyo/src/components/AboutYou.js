@@ -56,18 +56,18 @@ function AboutYou({ onBack, onLogout }) {
         {/* Decorative Elements */}
         <div className="decorative-elements">
           <div className="group-1-10">
-            <img src="/images/ellipse-1-11.svg" className="ellipse-1-11" alt="ellipse-1" />
-            <img src="/images/ellipse-2-12.svg" className="ellipse-2-12" alt="ellipse-2" />
-            <img src="/images/ellipse-3-13.svg" className="ellipse-3-13" alt="ellipse-3" />
-            <img src="/images/ellipse-4-14.svg" className="ellipse-4-14" alt="ellipse-4" />
+            <img src="/images/ellipse-1-15.svg" className="ellipse-1-11" alt="ellipse-1" />
+            <img src="/images/ellipse-2-16.svg" className="ellipse-2-12" alt="ellipse-2" />
+            <img src="/images/ellipse-3-17.svg" className="ellipse-3-13" alt="ellipse-3" />
+            <img src="/images/ellipse-4-18.svg" className="ellipse-4-14" alt="ellipse-4" />
           </div>
           <div className="group-2-15">
-            <img src="/images/rectangle-14-16.svg" className="rectangle-14-16" alt="rectangle-14" />
-            <img src="/images/rectangle-15-17.svg" className="rectangle-15-17" alt="rectangle-15" />
-            <img src="/images/rectangle-17-18.svg" className="rectangle-17-18" alt="rectangle-17" />
-            <img src="/images/rectangle-18-19.svg" className="rectangle-18-19" alt="rectangle-18" />
-            <img src="/images/rectangle-16-20.svg" className="rectangle-16-20" alt="rectangle-16" />
-            <img src="/images/rectangle-12-21.svg" className="rectangle-12-21" alt="rectangle-12" />
+            <img src="/images/rectangle-14-20.svg" className="rectangle-14-16" alt="rectangle-14" />
+            <img src="/images/rectangle-15-21.svg" className="rectangle-15-17" alt="rectangle-15" />
+            <img src="/images/rectangle-17-22.svg" className="rectangle-17-18" alt="rectangle-17" />
+            <img src="/images/rectangle-18-23.svg" className="rectangle-18-19" alt="rectangle-18" />
+            <img src="/images/rectangle-16-24.svg" className="rectangle-16-20" alt="rectangle-16" />
+            <img src="/images/rectangle-12-25.svg" className="rectangle-12-21" alt="rectangle-12" />
           </div>
           <div className="group-3-22">
             <img src="/images/rectangle-14-23.svg" className="rectangle-14-23" alt="rectangle-14" />
