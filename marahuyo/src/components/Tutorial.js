@@ -1,19 +1,55 @@
 import './Tutorial.css';
+import { useState } from 'react';
 
 function Tutorial({ onBack, onLogout }) {
+  const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+  
+  const videos = [
+    {
+      id: 'y_h7RHvIXgc',
+      title: 'Everyday Soft Glam Makeup Tutorial',
+      thumbnail: `https://img.youtube.com/vi/y_h7RHvIXgc/maxresdefault.jpg`
+    },
+    {
+      id: 'H84bX7imbJs',
+      title: 'Beginner-Friendly Natural Makeup Routine', 
+      thumbnail: `https://img.youtube.com/vi/H84bX7imbJs/maxresdefault.jpg`
+    },
+    {
+      id: 'Me-vF1aSptE',
+      title: 'Fresh No-Makeup Makeup Look',
+      thumbnail: `https://img.youtube.com/vi/Me-vF1aSptE/maxresdefault.jpg`
+    },
+    {
+      id: 'g6geutlCWjM',
+      title: 'Smokey Eye Night-Out Tutorial',
+      thumbnail: `https://img.youtube.com/vi/g6geutlCWjM/maxresdefault.jpg`
+    }
+  ];
+
+  const nextVideo = () => {
+    setCurrentVideoIndex((prev) => (prev + 1) % videos.length);
+  };
+
+  const prevVideo = () => {
+    setCurrentVideoIndex((prev) => (prev - 1 + videos.length) % videos.length);
+  };
+
+  const playVideo = (videoId) => {
+    window.open(`https://www.youtube.com/watch?v=${videoId}`, '_blank');
+  };
+
   return (
     <div className="tutorial-page">
       {/* Header - Dark Blue Bar with Logo and Icons */}
       <div className="header">
-        {/* Logo - Two yellow hands framing a blue eye */}
+        {/* Logo - Marahuyo logo */}
         <button 
           className="logo logo-button"
           onClick={() => onBack('home')}
           aria-label="Home"
         >
-          <div className="hand-left"></div>
-          <div className="eye"></div>
-          <div className="hand-right"></div>
+          <img src="/images/marahuyo-logo.png" alt="Marahuyo" className="header-logo-img" />
         </button>
 
         {/* Right side icons */}
@@ -27,15 +63,6 @@ function Tutorial({ onBack, onLogout }) {
             <svg className="icon" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M20 2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h4l4 4 4-4h4c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
             </svg>
-          </button>
-          
-          {/* Bookmark icon */}
-          <button 
-            className="icon-circle"
-            onClick={() => onBack('bookmarks')}
-            title="Bookmarks"
-          >
-            <img src="/images/icon-9.svg" alt="bookmark" className="header-icon" />
           </button>
           
           {/* Profile icon */}
@@ -73,21 +100,35 @@ function Tutorial({ onBack, onLogout }) {
         {/* Video Carousel Section */}
         <div className="video-carousel-section">
           {/* Left Arrow */}
-          <div className="carousel-arrow left-arrow">
+          <button className="carousel-arrow left-arrow" onClick={prevVideo}>
             <svg className="arrow-icon" fill="currentColor" viewBox="0 0 24 24">
               <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
             </svg>
-          </div>
+          </button>
 
           {/* Left Video Placeholder */}
           <div className="video-placeholder left-video">
-            <div className="video-content">
-              <img src="/images/icon-51.svg" className="video-icon" alt="video" />
+            <div className="video-content" onClick={() => playVideo(videos[(currentVideoIndex - 1 + videos.length) % videos.length].id)}>
+              <img 
+                src={videos[(currentVideoIndex - 1 + videos.length) % videos.length].thumbnail} 
+                className="video-thumbnail" 
+                alt={videos[(currentVideoIndex - 1 + videos.length) % videos.length].title}
+              />
+              <div className="play-overlay">
+                <svg className="play-icon" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </div>
             </div>
           </div>
 
           {/* Center Video Player */}
-          <div className="video-player">
+          <div className="video-player" onClick={() => playVideo(videos[currentVideoIndex].id)}>
+            <img 
+              src={videos[currentVideoIndex].thumbnail} 
+              className="main-video-thumbnail" 
+              alt={videos[currentVideoIndex].title}
+            />
             <div className="play-button">
               <svg className="play-icon" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M8 5v14l11-7z"/>
@@ -97,49 +138,57 @@ function Tutorial({ onBack, onLogout }) {
 
           {/* Right Video Placeholder */}
           <div className="video-placeholder right-video">
-            <div className="video-content">
-              <img src="/images/icon-51.svg" className="video-icon" alt="video" />
+            <div className="video-content" onClick={() => playVideo(videos[(currentVideoIndex + 1) % videos.length].id)}>
+              <img 
+                src={videos[(currentVideoIndex + 1) % videos.length].thumbnail} 
+                className="video-thumbnail" 
+                alt={videos[(currentVideoIndex + 1) % videos.length].title}
+              />
+              <div className="play-overlay">
+                <svg className="play-icon" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </div>
             </div>
           </div>
 
           {/* Right Arrow */}
-          <div className="carousel-arrow right-arrow">
+          <button className="carousel-arrow right-arrow" onClick={nextVideo}>
             <svg className="arrow-icon" fill="currentColor" viewBox="0 0 24 24">
               <path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/>
             </svg>
-          </div>
+          </button>
         </div>
 
         {/* Video Title */}
         <div className="video-title">
-          <h2>Make up style</h2>
+          <h2>{videos[currentVideoIndex].title}</h2>
         </div>
 
-        {/* Bottom Content Section */}
+        {/* Bottom Content Section - Makeup Items Grid */}
         <div className="bottom-content">
-          {/* Current Item in Use */}
-          <div className="current-item-card">
-            <div className="item-image">
-              <img src="/images/icon-51.svg" className="item-icon" alt="item" />
+          <h3 className="grid-title">Recommended Makeup Items</h3>
+          <div className="makeup-grid">
+            <div className="makeup-card">
+              <img src="https://imgs.search.brave.com/6rXnw1Ez2iMLB-X2Jwjf4TTwnKTqT5BCxQzRAeCntK4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzNjLzQ2/L2RmLzNjNDZkZjgz/Njk1NzU3M2FiNzkw/M2ZhNmFlMWYzNmVh/LmpwZw" alt="issy active concealer" className="makeup-image" />
+              <div className="makeup-info">
+                <h4 className="makeup-name">issy active concealer</h4>
+                <p className="makeup-desc">Lightweight, buildable coverage that brightens under eyes and blurs blemishes.</p>
+              </div>
             </div>
-            <div className="item-content">
-              <h3 className="item-title">Current item in use</h3>
-              <p className="item-description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-              </p>
-              <button className="add-button">
-                <svg className="plus-icon" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
-                </svg>
-              </button>
+            <div className="makeup-card">
+              <img src="https://imgs.search.brave.com/MSn2UzyTtdZQDOa2IQaag8PJRJVuk-PQCn5RRXo91Uc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuc3VtbWl0bWVk/aWEtZGlnaXRhbC5j/b20vY29zbW8vaW1h/Z2VzLzIwMjUvMDEv/MjEvYmVhdXR5LWZ5/cC12aWNlLWNvc21l/dGljcy1vbi10aGUt/ZGFpbHktYnJvdy1j/b2xsZWN0aW9uLTE3/Mzc0NTQ4NDUuanBn" alt="vice brow collection" className="makeup-image" />
+              <div className="makeup-info">
+                <h4 className="makeup-name">vice brow collection</h4>
+                <p className="makeup-desc">Define, fill, and set brows with precise pencils and flexible gels.</p>
+              </div>
             </div>
-          </div>
-
-          {/* Upcoming Items */}
-          <div className="upcoming-items-card">
-            <h3 className="upcoming-title">Upcoming Items</h3>
-            <div className="upcoming-content">
-              <p>More tutorials coming soon...</p>
+            <div className="makeup-card">
+              <img src="https://imgs.search.brave.com/XEZrAXLLHE7jfwOeE7WYfQejoBdGsXFvxjmQTwnMw6Y/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9ncndt/Y29zbWV0aWNzLmNv/bS5waC9jZG4vc2hv/cC9maWxlcy9FY29t/bS1QUkxvb3NlQmFr/aW5nX1NldHRpbmdQ/b3dkZXItMTEuanBn/P3Y9MTc0NzA2MDE5/MyZ3aWR0aD0xNDQ1" alt="grwm powder rush" className="makeup-image" />
+              <div className="makeup-info">
+                <h4 className="makeup-name">grwm powder rush</h4>
+                <p className="makeup-desc">Silky soft-pressed powder to blur shine and set looks all day.</p>
+              </div>
             </div>
           </div>
         </div>

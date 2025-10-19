@@ -116,6 +116,8 @@
 .profile-icon {
   width: 1.2rem;
   height: 1.2rem;
+  /* Match the blue tone used by SVG icons (approximate) */
+  filter: brightness(0) saturate(100%) invert(25%) sepia(18%) saturate(1200%) hue-rotate(185deg) brightness(92%) contrast(90%);
 }
 
 .logout-button {

@@ -127,6 +127,45 @@ function BudgetTracker({ onBack, onLogout }) {
               <strong>Approx. Price:</strong> ₱399–₱749
             </p>
           </div>
+
+          {/* Fifth Card - issy active concealer */}
+          <div className="content-card">
+            <div className="card-header">
+              <img src="https://imgs.search.brave.com/6rXnw1Ez2iMLB-X2Jwjf4TTwnKTqT5BCxQzRAeCntK4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzNjLzQ2/L2RmLzNjNDZkZjgz/Njk1NzU3M2FiNzkw/M2ZhNmFlMWYzNmVh/LmpwZw" className="icon-51" alt="issy active concealer" />
+              <h3 className="item-title">issy active concealer</h3>
+            </div>
+            <p className="item-description">
+              Lightweight, buildable coverage that brightens under eyes and blurs blemishes.
+              <br />
+              <strong>Approx. Price:</strong> ₱399–₱499
+            </p>
+          </div>
+
+          {/* Sixth Card - vice brow collection */}
+          <div className="content-card">
+            <div className="card-header">
+              <img src="https://imgs.search.brave.com/MSn2UzyTtdZQDOa2IQaag8PJRJVuk-PQCn5RRXo91Uc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuc3VtbWl0bWVk/aWEtZGlnaXRhbC5j/b20vY29zbW8vaW1h/Z2VzLzIwMjUvMDEv/MjEvYmVhdXR5LWZ5/cC12aWNlLWNvc21l/dGljcy1vbi10aGUt/ZGFpbHktYnJvdy1j/b2xsZWN0aW9uLTE3/Mzc0NTQ4NDUuanBn" className="icon-51" alt="vice brow collection" />
+              <h3 className="item-title">vice brow collection</h3>
+            </div>
+            <p className="item-description">
+              Define, fill, and set brows with precise pencils and flexible gels.
+              <br />
+              <strong>Approx. Price:</strong> ₱195–₱295
+            </p>
+          </div>
+
+          {/* Seventh Card - grwm powder rush */}
+          <div className="content-card">
+            <div className="card-header">
+              <img src="https://imgs.search.brave.com/XEZrAXLLHE7jfwOeE7WYfQejoBdGsXFvxjmQTwnMw6Y/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9ncndt/Y29zbWV0aWNzLmNv/bS5waC9jZG4vc2hv/cC9maWxlcy9FY29t/bS1QUkxvb3NlQmFr/aW5nX1NldHRpbmdQ/b3dkZXItMTEuanBn/P3Y9MTc0NzA2MDE5/MyZ3aWR0aD0xNDQ1" className="icon-51" alt="grwm powder rush" />
+              <h3 className="item-title">grwm powder rush</h3>
+            </div>
+            <p className="item-description">
+              Silky soft-pressed powder to blur shine and set looks all day.
+              <br />
+              <strong>Approx. Price:</strong> ₱349–₱499
+            </p>
+          </div>
         </div>
       </div>
     </div>
