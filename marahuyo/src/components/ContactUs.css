@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&display=swap');
+
+.contactus-page {
+  min-height: 100vh;
+  background-color: #ece2d6;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  background-color: #354a83;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 1.5rem;
+}
+
+.logo-button { background: none; border: none; cursor: pointer; }
+.header-logo-img { width: 56px; height: 56px; object-fit: contain; }
+
+.header-icons { display: flex; align-items: center; gap: 1rem; margin-left: auto; }
+.icon-circle { width: 2rem; height: 2rem; background: #f9dedc; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+.logout-button { width: 2rem; height: 2rem; background: #f9dedc; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: none; cursor: pointer; }
+.icon { width: 1.2rem; height: 1.2rem; color: #354a83; }
+.profile-icon { width: 1.2rem; height: 1.2rem; }
+
+.contactus-content { flex: 1; position: relative; padding: 2rem; }
+.crumpled-paper-bg { position: absolute; inset: 0; z-index: 1; }
+.crumpled-texture { width: 100%; height: 100%; object-fit: cover; opacity: 0.2; }
+
+.contact-card {
+  position: relative;
+  z-index: 2;
+  background: #f2c757;
+  border: 1px solid #000;
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.contact-title {
+  font-family: 'Crimson Text', serif;
+  font-size: 3rem;
+  color: #000;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.contact-sections { display: grid; grid-template-columns: 1fr 1.2fr; gap: 2rem; }
+.section-title { font-family: 'Crimson Text', serif; font-size: 1.5rem; margin-bottom: 0.75rem; }
+.contact-details p { margin: 0.25rem 0; font-family: 'Crimson Text', serif; }
+.contact-details a { color: #1e1e1e; text-decoration: underline; }
+
+.socials { display: flex; gap: 1rem; margin-top: 0.75rem; }
+.social-item { display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0.75rem; background: #354a83; color: #f2c757; border-radius: 8px; text-decoration: none; }
+.social-item img { width: 1.25rem; height: 1.25rem; }
+
+.contact-form { display: flex; flex-direction: column; gap: 0.5rem; }
+.form-label { font-family: 'Crimson Text', serif; font-size: 0.95rem; }
+.form-input, .form-textarea { border: 1px solid #000; border-radius: 6px; padding: 0.75rem 0.9rem; background: #fff; }
+.submit-button { align-self: flex-start; background: #354a83; color: #f2c757; border: none; padding: 0.6rem 1rem; border-radius: 8px; cursor: pointer; margin-top: 0.5rem; }
+.submit-button:hover { background: #2a3a6b; }
+
+@media (max-width: 900px) {
+  .contact-sections { grid-template-columns: 1fr; }
+}
+
+

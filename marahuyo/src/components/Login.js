@@ -33,12 +33,14 @@ function Login({ onLogin }) {
     <div className="login-page">
       {/* Header - Dark Blue Bar with Logo */}
       <div className="header">
-        {/* Logo - Two yellow hands framing a blue eye */}
-        <div className="logo">
-          <div className="hand-left"></div>
-          <div className="eye"></div>
-          <div className="hand-right"></div>
-        </div>
+        {/* Logo - Marahuyo icon image */}
+        <button
+          className="logo logo-button"
+          aria-label="Home"
+          type="button"
+        >
+          <img src="/images/marahuyo-logo.png" alt="Marahuyo" className="header-logo-img" />
+        </button>
       </div>
 
       {/* Main Content */}

@@ -4,6 +4,7 @@ import SkinType from './components/SkinType';
 import BudgetTracker from './components/BudgetTracker';
 import Tutorial from './components/Tutorial';
 import AboutYou from './components/AboutYou';
+import ContactUs from './components/ContactUs';
 import Login from './components/Login';
 
 function App() {
@@ -49,6 +50,10 @@ function App() {
     return <Tutorial onBack={handleNavigation} onLogout={handleLogout} />;
   }
   
+  if (activeSection === 'chat') {
+    return <ContactUs onBack={handleNavigation} onLogout={handleLogout} />;
+  }
+  
   if (activeSection === 'about-you') {
     return <AboutYou onBack={handleNavigation} onLogout={handleLogout} />;
   }
@@ -57,30 +62,38 @@ function App() {
     <div className="desktop-1-1">
       {/* Header - Dark Blue Bar with Logo and Icons */}
       <div className="header">
-        {/* Logo - Two yellow hands framing a blue eye */}
+        {/* Logo - Marahuyo icon image */}
         <button 
           className="logo logo-button"
           onClick={() => handleNavigation('home')}
           aria-label="Home"
         >
-          <div className="hand-left"></div>
-          <div className="eye"></div>
-          <div className="hand-right"></div>
+          <img src="/images/marahuyo-logo.png" alt="Marahuyo" className="header-logo-img" />
         </button>
 
         {/* Right side icons */}
         <div className="header-icons">
           {/* Chat icon */}
-          <div className="icon-circle">
-            <svg className="icon" fill="currentColor" viewBox="0 0 24 24">
+          <button 
+            className="icon-circle"
+            onClick={() => handleNavigation('chat')}
+            title="Chat"
+          >
+            <svg className="icon" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M20 2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h4l4 4 4-4h4c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
             </svg>
-          </div>
+          </button>
           
           {/* Profile icon */}
-          <div className="icon-circle">
-            <img src="/images/icon-64.svg" alt="profile" className="profile-icon" />
-          </div>
+          <button 
+            className="icon-circle"
+            onClick={() => handleNavigation('aboutyou')}
+            title="Profile"
+          >
+            <svg className="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 12c2.761 0 5-2.239 5-5s-2.239-5-5-5-5 2.239-5 5 2.239 5 5 5zm0 2c-3.866 0-7 3.134-7 7h2a5 5 0 0 1 10 0h2c0-3.866-3.134-7-7-7z"/>
+            </svg>
+          </button>
           
           {/* Logout button */}
           <button 
@@ -104,9 +117,7 @@ function App() {
           
           {/* Large Logo */}
           <div className="large-logo">
-            <div className="hand-left-large"></div>
-            <div className="eye-large"></div>
-            <div className="hand-right-large"></div>
+            <img src="/images/marahuyo-logo.png" alt="Marahuyo" className="marahuyo-large-icon" />
           </div>
           
           {/* MARAHUYO Text */}

@@ -94,6 +94,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.icon-circle:hover {
+  transform: scale(1.1);
+  background-color: #f5c6c3;
+}
+
+.icon-circle:focus {
+  outline: 2px solid #f2c757;
+  outline-offset: 2px;
 }
 
 .header-icon {
@@ -159,31 +172,6 @@
   opacity: 0.2;
 }
 
-/* Decorative Elements */
-.decorative-elements {
-  position: absolute;
-  top: 2rem;
-  right: 2rem;
-  z-index: 2;
-}
-
-.group-1-10, .group-2-15, .group-3-22 {
-  display: flex;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-.ellipse-1-11, .ellipse-2-12, .ellipse-3-13, .ellipse-4-14 {
-  width: 1rem;
-  height: 1rem;
-}
-
-.rectangle-14-16, .rectangle-15-17, .rectangle-17-18, .rectangle-18-19,
-.rectangle-16-20, .rectangle-12-21, .rectangle-14-23, .rectangle-15-24,
-.rectangle-17-25, .rectangle-18-26, .rectangle-16-27, .rectangle-12-28 {
-  width: 1rem;
-  height: 1rem;
-}
 
 /* Main Yellow Card */
 .main-card {

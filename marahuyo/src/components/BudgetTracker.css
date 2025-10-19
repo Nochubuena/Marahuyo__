@@ -94,6 +94,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.icon-circle:hover {
+  transform: scale(1.1);
+  background-color: #f5c6c3;
+}
+
+.icon-circle:focus {
+  outline: 2px solid #f2c757;
+  outline-offset: 2px;
 }
 
 .header-icon {
@@ -157,31 +170,6 @@
   opacity: 0.2;
 }
 
-/* Decorative Elements */
-.decorative-elements {
-  position: absolute;
-  top: 2rem;
-  right: 2rem;
-  z-index: 2;
-}
-
-.group-1-17, .group-2-22, .group-3-29 {
-  display: flex;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-.ellipse-1-18, .ellipse-2-19, .ellipse-3-20, .ellipse-4-21 {
-  width: 1rem;
-  height: 1rem;
-}
-
-.rectangle-14-23, .rectangle-15-24, .rectangle-17-25, .rectangle-18-26,
-.rectangle-16-27, .rectangle-12-28, .rectangle-14-30, .rectangle-15-31,
-.rectangle-17-32, .rectangle-18-33, .rectangle-16-34, .rectangle-12-35 {
-  width: 1rem;
-  height: 1rem;
-}
 
 /* Search Bar */
 .search-bar {

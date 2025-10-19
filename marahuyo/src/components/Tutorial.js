@@ -19,19 +19,35 @@ function Tutorial({ onBack, onLogout }) {
         {/* Right side icons */}
         <div className="header-icons">
           {/* Chat icon */}
-          <div className="icon-circle">
-            <img src="/images/icon-6.svg" alt="chat" className="header-icon" />
-          </div>
+          <button 
+            className="icon-circle"
+            onClick={() => onBack('chat')}
+            title="Chat"
+          >
+            <svg className="icon" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20 2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h4l4 4 4-4h4c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
+            </svg>
+          </button>
           
           {/* Bookmark icon */}
-          <div className="icon-circle">
+          <button 
+            className="icon-circle"
+            onClick={() => onBack('bookmarks')}
+            title="Bookmarks"
+          >
             <img src="/images/icon-9.svg" alt="bookmark" className="header-icon" />
-          </div>
+          </button>
           
           {/* Profile icon */}
-          <div className="icon-circle">
-            <img src="/images/icon-11.svg" alt="profile" className="header-icon" />
-          </div>
+          <button 
+            className="icon-circle"
+            onClick={() => onBack('aboutyou')}
+            title="Profile"
+          >
+            <svg className="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 12c2.761 0 5-2.239 5-5s-2.239-5-5-5-5 2.239-5 5 2.239 5 5 5zm0 2c-3.866 0-7 3.134-7 7h2a5 5 0 0 1 10 0h2c0-3.866-3.134-7-7-7z"/>
+            </svg>
+          </button>
           
           {/* Logout button */}
           <button 
@@ -53,31 +69,6 @@ function Tutorial({ onBack, onLogout }) {
           <img src="/images/bnb-1-7.png" className="crumpled-texture" alt="crumpled paper" />
         </div>
 
-        {/* Decorative Elements */}
-        <div className="decorative-elements">
-          <div className="group-1-17">
-            <img src="/images/ellipse-1-18.svg" className="ellipse-1-18" alt="ellipse-1" />
-            <img src="/images/ellipse-2-19.svg" className="ellipse-2-19" alt="ellipse-2" />
-            <img src="/images/ellipse-3-20.svg" className="ellipse-3-20" alt="ellipse-3" />
-            <img src="/images/ellipse-4-21.svg" className="ellipse-4-21" alt="ellipse-4" />
-          </div>
-          <div className="group-2-22">
-            <img src="/images/rectangle-14-23.svg" className="rectangle-14-23" alt="rectangle-14" />
-            <img src="/images/rectangle-15-24.svg" className="rectangle-15-24" alt="rectangle-15" />
-            <img src="/images/rectangle-17-25.svg" className="rectangle-17-25" alt="rectangle-17" />
-            <img src="/images/rectangle-18-26.svg" className="rectangle-18-26" alt="rectangle-18" />
-            <img src="/images/rectangle-16-27.svg" className="rectangle-16-27" alt="rectangle-16" />
-            <img src="/images/rectangle-12-28.svg" className="rectangle-12-28" alt="rectangle-12" />
-          </div>
-          <div className="group-3-29">
-            <img src="/images/rectangle-14-30.svg" className="rectangle-14-30" alt="rectangle-14" />
-            <img src="/images/rectangle-15-31.svg" className="rectangle-15-31" alt="rectangle-15" />
-            <img src="/images/rectangle-17-32.svg" className="rectangle-17-32" alt="rectangle-17" />
-            <img src="/images/rectangle-18-33.svg" className="rectangle-18-33" alt="rectangle-18" />
-            <img src="/images/rectangle-16-34.svg" className="rectangle-16-34" alt="rectangle-16" />
-            <img src="/images/rectangle-12-35.svg" className="rectangle-12-35" alt="rectangle-12" />
-          </div>
-        </div>
 
         {/* Video Carousel Section */}
         <div className="video-carousel-section">

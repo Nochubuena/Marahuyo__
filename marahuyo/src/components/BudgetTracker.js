@@ -11,32 +11,32 @@ function BudgetTracker({ onBack, onLogout }) {
           onClick={() => onBack('home')}
           aria-label="Home"
         >
-          <div className="hand-left"></div>
-          <div className="eye"></div>
-          <div className="hand-right"></div>
+          <img src="/images/marahuyo-logo.png" alt="Marahuyo" className="header-logo-img" />
         </button>
 
         {/* Right side icons */}
         <div className="header-icons">
           {/* Chat icon */}
-          <div className="icon-circle">
-            <img src="/images/icon-6.svg" alt="chat" className="header-icon" />
-          </div>
-          
-          {/* Bookmark icon */}
-          <div className="icon-circle">
-            <img src="/images/icon-9.svg" alt="bookmark" className="header-icon" />
-          </div>
+          <button 
+            className="icon-circle"
+            onClick={() => onBack('chat')}
+            title="Chat"
+          >
+            <svg className="icon" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20 2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h4l4 4 4-4h4c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
+            </svg>
+          </button>
           
           {/* Profile icon */}
-          <div className="icon-circle">
-            <img src="/images/icon-11.svg" alt="profile" className="header-icon" />
-          </div>
-          
-          {/* Chat icon 2 */}
-          <div className="icon-circle">
-            <img src="/images/icon-13.svg" alt="chat2" className="header-icon" />
-          </div>
+          <button 
+            className="icon-circle"
+            onClick={() => onBack('aboutyou')}
+            title="Profile"
+          >
+            <svg className="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 12c2.761 0 5-2.239 5-5s-2.239-5-5-5-5 2.239-5 5 2.239 5 5 5zm0 2c-3.866 0-7 3.134-7 7h2a5 5 0 0 1 10 0h2c0-3.866-3.134-7-7-7z"/>
+            </svg>
+          </button>
           
           {/* Logout button */}
           <button 
@@ -58,31 +58,6 @@ function BudgetTracker({ onBack, onLogout }) {
           <img src="/images/bnb-1-7.png" className="crumpled-texture" alt="crumpled paper" />
         </div>
 
-        {/* Decorative Elements */}
-        <div className="decorative-elements">
-          <div className="group-1-17">
-            <img src="/images/ellipse-1-18.svg" className="ellipse-1-18" alt="ellipse-1" />
-            <img src="/images/ellipse-2-19.svg" className="ellipse-2-19" alt="ellipse-2" />
-            <img src="/images/ellipse-3-20.svg" className="ellipse-3-20" alt="ellipse-3" />
-            <img src="/images/ellipse-4-21.svg" className="ellipse-4-21" alt="ellipse-4" />
-          </div>
-          <div className="group-2-22">
-            <img src="/images/rectangle-14-23.svg" className="rectangle-14-23" alt="rectangle-14" />
-            <img src="/images/rectangle-15-24.svg" className="rectangle-15-24" alt="rectangle-15" />
-            <img src="/images/rectangle-17-25.svg" className="rectangle-17-25" alt="rectangle-17" />
-            <img src="/images/rectangle-18-26.svg" className="rectangle-18-26" alt="rectangle-18" />
-            <img src="/images/rectangle-16-27.svg" className="rectangle-16-27" alt="rectangle-16" />
-            <img src="/images/rectangle-12-28.svg" className="rectangle-12-28" alt="rectangle-12" />
-          </div>
-          <div className="group-3-29">
-            <img src="/images/rectangle-14-30.svg" className="rectangle-14-30" alt="rectangle-14" />
-            <img src="/images/rectangle-15-31.svg" className="rectangle-15-31" alt="rectangle-15" />
-            <img src="/images/rectangle-17-32.svg" className="rectangle-17-32" alt="rectangle-17" />
-            <img src="/images/rectangle-18-33.svg" className="rectangle-18-33" alt="rectangle-18" />
-            <img src="/images/rectangle-16-34.svg" className="rectangle-16-34" alt="rectangle-16" />
-            <img src="/images/rectangle-12-35.svg" className="rectangle-12-35" alt="rectangle-12" />
-          </div>
-        </div>
 
         {/* Search Bar */}
         <div className="search-bar">
@@ -101,50 +76,56 @@ function BudgetTracker({ onBack, onLogout }) {
 
         {/* Content Cards Row */}
         <div className="content-cards-row">
-          {/* First Card */}
+          {/* First Card - Chu Chu Beauty Blush */}
           <div className="content-card">
             <div className="card-header">
-              <img src="/images/icon-51.svg" className="icon-51" alt="item" />
-              <h3 className="item-title">Item Name</h3>
+              <img src="https://down-ph.img.susercontent.com/file/sg-11134202-7rd67-lvt30y69pt9l6c" className="icon-51" alt="Chu Chu Beauty Blush" />
+              <h3 className="item-title">Chu Chu Beauty Heart Stick Blush</h3>
             </div>
             <p className="item-description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+              Multi-use cream stick for cheeks, lips, and eyes. Blendable, non-sticky natural flush.
+              <br />
+              <strong>Approx. Price:</strong> ₱399
             </p>
           </div>
 
-          {/* Second Card */}
+          {/* Second Card - Imma Beauty Blush */}
           <div className="content-card">
             <div className="card-header">
-              <img src="/images/icon-51.svg" className="icon-51" alt="item" />
-              <h3 className="item-title">Item Name</h3>
+              <img src="https://tse1.mm.bing.net/th/id/OIP.fK_fR6xJzarUZ_hAwzwLAgHaJQ?cb=12ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3" className="icon-51" alt="Imma Beauty Blush" />
+              <h3 className="item-title">Imma Beauty Blush</h3>
             </div>
             <p className="item-description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+              Cream-to-powder blush with a radiant finish; easy to apply and blend.
+              <br />
+              <strong>Approx. Price:</strong> ₱350
             </p>
           </div>
 
-          {/* Third Card */}
+          {/* Third Card - Imma Beauty Lippie */}
           <div className="content-card">
             <div className="card-header">
-              <img src="/images/icon-51.svg" className="icon-51" alt="item" />
-              <h3 className="item-title">Item Name</h3>
+              <img src="https://tse1.mm.bing.net/th/id/OIP.fK_fR6xJzarUZ_hAwzwLAgHaJQ?cb=12ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3" className="icon-51" alt="Imma Beauty Lippie" />
+              <h3 className="item-title">Imma Beauty Lippie</h3>
             </div>
             <p className="item-description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+              Moisturizing lipstick with vibrant color payoff and comfortable wear.
+              <br />
+              <strong>Approx. Price:</strong> ₱320
             </p>
           </div>
 
-          {/* Fourth Card - Other Options */}
-          <div className="content-card other-options-card">
-            <h3 className="other-options">Here are some other options:</h3>
-            <div className="shopping-actions">
-              <div className="shopping-cart">
-                <img src="/images/icon-60.svg" className="icon-60" alt="cart" />
-              </div>
-              <div className="shopping-cart">
-                <img src="/images/icon-62.svg" className="icon-62" alt="cart" />
-              </div>
+          {/* Fourth Card - BLK Air Matte */}
+          <div className="content-card">
+            <div className="card-header">
+              <img src="https://down-ph.img.susercontent.com/file/ph-11134207-7r98s-lyx3qrxpp8fycc" className="icon-51" alt="BLK Air Matte" />
+              <h3 className="item-title">BLK Air Matte</h3>
             </div>
+            <p className="item-description">
+              Lightweight, airy-matte formula that blurs and smooths for a soft-focus look.
+              <br />
+              <strong>Approx. Price:</strong> ₱399–₱749
+            </p>
           </div>
         </div>
       </div>
