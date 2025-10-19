@@ -4,12 +4,23 @@ import { useEffect, useRef, useState } from 'react';
 function CameraPanel() {
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
+  const streamRef = useRef(null);
   const [hasStream, setHasStream] = useState(false);
   const [error, setError] = useState('');
 
   useEffect(() => {
     // If the site already has permission, start immediately
-    let cleanup;
+    const stopStream = () => {
+      const stream = streamRef.current;
+      if (stream) {
+        stream.getTracks().forEach(track => track.stop());
+        streamRef.current = null;
+      }
+      if (videoRef.current) {
+        videoRef.current.srcObject = null;
+      }
+      setHasStream(false);
+    };
     const check = async () => {
       try {
         if (navigator.permissions && navigator.permissions.query) {
@@ -21,21 +32,24 @@ function CameraPanel() {
       } catch {}
     };
     check();
-    return () => { if (typeof cleanup === 'function') cleanup(); };
+    return () => { stopStream(); };
   }, []);
 
   const handleStart = async () => {
     // Retry starting the camera on user gesture
     try {
-      const getUM = (navigator.mediaDevices && navigator.mediaDevices.getUserMedia)
-        ? navigator.mediaDevices.getUserMedia.bind(navigator.mediaDevices)
-        : (navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia);
-      if (!getUM) {
+      if (!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia)) {
         setError('getUserMedia is not supported in this browser');
         return;
       }
       const constraints = { video: { facingMode: 'user' }, audio: false };
-      const stream = await getUM(constraints);
+      // Stop any existing stream before starting a new one
+      if (streamRef.current) {
+        streamRef.current.getTracks().forEach(track => track.stop());
+        streamRef.current = null;
+      }
+      const stream = await navigator.mediaDevices.getUserMedia(constraints);
+      streamRef.current = stream;
       if (videoRef.current) {
         videoRef.current.srcObject = stream;
         await videoRef.current.play();
@@ -43,10 +57,19 @@ function CameraPanel() {
         setError('');
       }
     } catch (e) {
-      if (window && !window.isSecureContext) {
+      if (typeof window !== 'undefined' && !window.isSecureContext) {
         setError('Camera requires HTTPS or localhost. Please run over a secure origin.');
       } else {
-        setError('Camera permission denied or unavailable');
+        const msg = e && e.name ? e.name : 'unknown error';
+        if (msg === 'NotAllowedError') {
+          setError('Camera permission denied. Please allow access and click Start again.');
+        } else if (msg === 'NotFoundError' || msg === 'DevicesNotFoundError') {
+          setError('No camera device found.');
+        } else if (msg === 'NotReadableError') {
+          setError('Camera is in use by another application.');
+        } else {
+          setError('Unable to start camera: ' + msg);
+        }
       }
     }
   };
